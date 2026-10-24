@@ -7,12 +7,16 @@ import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.smartv2v.app.telemetry.TelemetryTransmissionService
@@ -71,7 +75,8 @@ class MainActivity : ComponentActivity() {
                     bottomBar = {
                         if (showBottomBar) {
                             NavigationBar(
-                                containerColor = NeoCardSurface
+                                containerColor = NeoCardSurface,
+                                tonalElevation = 8.dp
                             ) {
                                 bottomNavItems.forEach { item ->
                                     val selected = currentRoute == item.route
@@ -79,10 +84,22 @@ class MainActivity : ComponentActivity() {
                                         selected = selected,
                                         onClick = {
                                             if (currentRoute != item.route) {
-                                                navController.navigate(item.route) {
-                                                    popUpTo(Screen.Dashboard.route) { saveState = true }
-                                                    launchSingleTop = true
-                                                    restoreState = true
+                                                if (item.route == Screen.Dashboard.route) {
+                                                    val popped = navController.popBackStack(Screen.Dashboard.route, inclusive = false)
+                                                    if (!popped) {
+                                                        navController.navigate(Screen.Dashboard.route) {
+                                                            popUpTo(Screen.Dashboard.route) { inclusive = true }
+                                                            launchSingleTop = true
+                                                        }
+                                                    }
+                                                } else {
+                                                    navController.navigate(item.route) {
+                                                        popUpTo(Screen.Dashboard.route) {
+                                                            saveState = true
+                                                        }
+                                                        launchSingleTop = true
+                                                        restoreState = true
+                                                    }
                                                 }
                                             }
                                         },
@@ -90,15 +107,21 @@ class MainActivity : ComponentActivity() {
                                             Icon(
                                                 imageVector = item.icon,
                                                 contentDescription = item.title,
-                                                tint = if (selected) NeoObsidian else NeoTextSecondary
+                                                tint = if (selected) NeoObsidian else NeoTextSecondary,
+                                                modifier = Modifier.size(24.dp)
                                             )
                                         },
                                         label = {
                                             Text(
                                                 text = item.title,
-                                                color = if (selected) NeoObsidian else NeoTextSecondary
+                                                color = if (selected) NeoObsidian else NeoTextSecondary,
+                                                fontWeight = if (selected) FontWeight.Bold else FontWeight.Medium,
+                                                fontSize = 11.sp
                                             )
-                                        }
+                                        },
+                                        colors = NavigationBarItemDefaults.colors(
+                                            indicatorColor = NeoSurfaceVariant
+                                        )
                                     )
                                 }
                             }
