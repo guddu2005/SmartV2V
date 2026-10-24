@@ -2,10 +2,13 @@ package com.smartv2v.app.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.Shield
 import androidx.compose.material.icons.filled.Stop
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.*
@@ -27,11 +30,13 @@ fun DashboardScreen(
     val monitoringState by transmissionService.monitoringState.collectAsState()
     val sensorState by transmissionService.sensorManagerService.sensorState.collectAsState()
     val locationState by transmissionService.locationManagerService.locationState.collectAsState()
+    val scrollState = rememberScrollState()
 
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(NeoLightBg)
+            .verticalScroll(scrollState)
             .padding(16.dp)
     ) {
         Text(
@@ -63,12 +68,19 @@ fun DashboardScreen(
                         modifier = Modifier.size(28.dp)
                     )
                     Spacer(modifier = Modifier.width(12.dp))
-                    Text(
-                        text = "🚨 EMERGENCY ALARM: HIGH COLLISION RISK!",
-                        color = AlertRed,
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 14.sp
-                    )
+                    Column {
+                        Text(
+                            text = "🚨 EMERGENCY ALARM: HIGH COLLISION RISK!",
+                            color = AlertRed,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 13.sp
+                        )
+                        Text(
+                            text = monitoringState.primaryHazardReason,
+                            color = AlertRed.copy(alpha = 0.9f),
+                            fontSize = 11.sp
+                        )
+                    }
                 }
             }
         }
@@ -76,7 +88,7 @@ fun DashboardScreen(
         // Start / Stop Monitoring Hero Control
         Card(
             colors = CardDefaults.cardColors(containerColor = NeoCardSurface),
-            shape = RoundedCornerShape(16.dp),
+            shape = RoundedCornerShape(20.dp),
             elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
             modifier = Modifier.fillMaxWidth()
         ) {
@@ -140,7 +152,7 @@ fun DashboardScreen(
         // Live Kinematics Overview Card
         Card(
             colors = CardDefaults.cardColors(containerColor = NeoCardSurface),
-            shape = RoundedCornerShape(16.dp),
+            shape = RoundedCornerShape(20.dp),
             elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
             modifier = Modifier.fillMaxWidth()
         ) {
@@ -148,8 +160,9 @@ fun DashboardScreen(
                 Text(
                     text = "LIVE SENSOR SNAPSHOT",
                     color = NeoObsidian,
-                    fontSize = 14.sp,
-                    fontWeight = FontWeight.Bold
+                    fontSize = 13.sp,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 1.sp
                 )
                 Spacer(modifier = Modifier.height(12.dp))
 
@@ -174,7 +187,7 @@ fun DashboardScreen(
 
         Card(
             colors = CardDefaults.cardColors(containerColor = NeoCardSurface),
-            shape = RoundedCornerShape(16.dp),
+            shape = RoundedCornerShape(20.dp),
             elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
             modifier = Modifier.fillMaxWidth()
         ) {
@@ -198,7 +211,7 @@ fun DashboardScreen(
                             text = "Collision Risk: ${monitoringState.currentRiskLevel}",
                             color = riskColor,
                             fontWeight = FontWeight.Bold,
-                            fontSize = 16.sp
+                            fontSize = 15.sp
                         )
                         Text(
                             text = "Probability: %.0f%% | TTC: %.1fs".format(
@@ -206,17 +219,60 @@ fun DashboardScreen(
                                 monitoringState.ttcToB
                             ),
                             color = NeoTextSecondary,
-                            fontSize = 12.sp
+                            fontSize = 11.sp
                         )
                     }
                 }
 
                 Button(
                     onClick = { onNavigate(Screen.CollisionRisk.route) },
-                    colors = ButtonDefaults.buttonColors(containerColor = NeoObsidian)
+                    colors = ButtonDefaults.buttonColors(containerColor = NeoObsidian),
+                    shape = RoundedCornerShape(10.dp)
                 ) {
-                    Text("RADAR", color = NeoCardSurface, fontSize = 12.sp)
+                    Text("RADAR", color = NeoCardSurface, fontSize = 12.sp, fontWeight = FontWeight.Bold)
                 }
+            }
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // FEATURE 5: Driver Safety Scorecard Preview on Dashboard
+        Card(
+            colors = CardDefaults.cardColors(containerColor = NeoCardSurface),
+            shape = RoundedCornerShape(20.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Row(
+                modifier = Modifier
+                    .padding(16.dp)
+                    .fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Surface(
+                        shape = CircleShape,
+                        color = SafeGreenBg,
+                        modifier = Modifier.size(42.dp)
+                    ) {
+                        Box(contentAlignment = Alignment.Center) {
+                            Icon(Icons.Default.Shield, contentDescription = null, tint = SafeGreen, modifier = Modifier.size(22.dp))
+                        }
+                    }
+                    Spacer(modifier = Modifier.width(12.dp))
+                    Column {
+                        Text("DRIVER SAFETY SCORE", color = NeoObsidian, fontSize = 12.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.sp)
+                        Text(monitoringState.safetyGrade, color = SafeGreen, fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                    }
+                }
+
+                Text(
+                    text = "${monitoringState.safetyScore}/100",
+                    color = NeoObsidian,
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Bold
+                )
             }
         }
     }
