@@ -1,0 +1,29 @@
+# IDE & System
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Build / Gradle
+.gradle/
+build/
+**/build/
+*.apk
+*.aab
+
+# Python / ML
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+ENV/
+env/
+.pytest_cache/
+*.egg-info/
+
+# Logs & Credentials
+*.log
+.env

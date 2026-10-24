@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-tint":"#565e74","primary-fixed-dim":"#bec6e0","surface":"#f7f9fb","inverse-primary":"#bec6e0","primary-container":"#131b2e","inverse-on-surface":"#eff1f3","surface-dim":"#d8dadc","on-tertiary-fixed-variant":"#005321","surface-container-high":"#e6e8ea","on-primary-fixed-variant":"#3f465c","on-tertiary-container":"#009844","background":"#f7f9fb","on-primary-container":"#7c839b","primary":"#000000","primary-fixed":"#dae2fd","surface-bright":"#f7f9fb","error-container":"#ffdad6","on-secondary":"#ffffff","on-secondary-container":"#457000","surface-container-lowest":"#ffffff","on-background":"#191c1e","on-error-container":"#93000a","on-primary-fixed":"#131b2e","tertiary-fixed-dim":"#4ae176","outline-variant":"#c6c6cd","on-tertiary-fixed":"#002109","surface-container":"#eceef0","tertiary-fixed":"#6bff8f","on-secondary-fixed-variant":"#304f00","on-tertiary":"#ffffff","error":"#ba1a1a","tertiary-container":"#002109","secondary":"#416900","outline":"#76777d","surface-container-highest":"#e0e3e5","surface-variant":"#e0e3e5","on-primary":"#ffffff","surface-container-low":"#f2f4f6","tertiary":"#000000","secondary-container":"#acf847","on-surface":"#191c1e","secondary-fixed-dim":"#91db2a","on-error":"#ffffff","secondary-fixed":"#acf847","on-secondary-fixed":"#102000","inverse-surface":"#2d3133","on-surface-variant":"#45464d"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"1rem","gutter-tablet":"1.5rem","space-xs":"0.25rem","margin":"1rem","gutter-desktop":"2rem","gutter":"1rem","margin-tablet":"2rem","space-xl":"2rem","space-sm":"0.5rem","space-lg":"1.5rem","margin-desktop":"3rem"},"fontFamily":{"headline-xl-mobile":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"]},"fontSize":{"headline-xl-mobile":["32px",{"lineHeight":"38px","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","letterSpacing":"0.005em","fontWeight":"500"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.03em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-md":["22px",{"lineHeight":"30px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}]}}}};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><img alt="SmartV2V Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UiwJro0OBn4QeR6TDvQidysxgVaLZ63OUn1ewnCYE1yGyktyH-BSdH0EIjq6ZGTu9CTMm3BM8Es6YUx-xMwg5VaDeWdEAUCJdZVh0rrcsDRWwzXzY3AwpaAed5TNAMas9VIlbuEBX_WuOvgF-fJc89m3JJ7EiByBYMC5K4YlVjrMYACketG_6v24xeFLV4Yu3XoYTwr6agRPAI0lg4FUkRM5f6lRgLbTfyodncZUkDslTOQ73AASGJ4ww"/><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight tracking-tight">SmartV2V</span><span class="hidden sm:inline-block font-label-sm text-label-sm text-on-surface-variant">| Settings</span></div><div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary-container/20 w-fit"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">V2V Active</span></div></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-secondary text-sm">wifi_tethering</span><span class="font-label-sm text-label-sm text-on-surface font-semibold">Connected</span></div><button class="w-11 h-11 flex items-center justify-center rounded-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1X9FGiXG4bS9ff_jEJh9nEwjAJcSn1A-WQHHAoYeo82YjmTl5sREAib2p2znzlImPdsW3dqi5y4SNDbyKaoeobu4QjNgL6SxIA2nXGqz5WTPuXYdzQDZ3dpdU-Be_v0oUbviXUaNe9_eFAlq-o5dtbiez8ECSnTkMjYl4XUKJS4ycfPR4-tyDCYa2Kt8a5-aRhZGyhrg8fVHyiXRlZZIJXaggn33tBvvQele8lbAJXg54sZCcD9Al2ICbo"/></button></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-margin py-space-sm space-y-space-md">
+<!-- Header Banner Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col space-y-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight">System Settings</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">V2V Network Parameters &amp; Hardware Calibration</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">tune</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex flex-wrap items-center gap-space-xs">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Android Device Node</span>
+</div>
+<span class="text-on-surface-variant text-xs">•</span>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container/30">
+<span class="material-symbols-outlined text-secondary text-sm">cell_tower</span>
+<span class="font-label-sm text-label-sm text-on-secondary-container font-semibold">Protocol v2.4-C2C</span>
+</div>
+</div>
+</div>
+<!-- Section 1: Node & Network Identification -->
+<div class="w-full flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider font-bold">Node &amp; Network Identification</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">ACTIVE MESH</span>
+</div>
+<!-- Vehicle ID Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">directions_car</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Assigned Vehicle ID</span>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold" id="vehicle-id-display">V001</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm font-semibold">Primary</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Passenger Sedan (Class M1) • Weight: 1450 kg</span>
+</div>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface active:scale-95 transition-transform" id="edit-id-btn" type="button">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+</div>
+<!-- Network Configuration Modular Panel -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md">
+<!-- Server IP -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-lg">dns</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Backend Server Host</span>
+<span class="font-headline-sm text-headline-sm text-on-surface text-sm font-semibold tracking-tight">192.168.1.105</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Reachable (4ms)</span>
+</div>
+</div>
+<div class="w-full h-px bg-surface-container"></div>
+<!-- Port & Channel -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-lg">lan</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ingress Telemetry Port</span>
+<span class="font-headline-sm text-headline-sm text-on-surface text-sm font-semibold tracking-tight">Port 8080 (TCP / WebSocket)</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-2 py-1 rounded-lg">WSS Tunnel</span>
+</div>
+<div class="w-full h-px bg-surface-container"></div>
+<!-- Protocol -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-lg">terminal</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Transmission Protocol</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">MQTT over WSS (Fast-Binary Protobuf)</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-xl">verified</span>
+</div>
+</div>
+</div>
+<!-- Section 2: Telemetry & Sampling Controls -->
+<div class="w-full flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider font-bold">Telemetry &amp; Sampling Controls</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">REAL-TIME DAQ</span>
+</div>
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-lg">
+<!-- Sampling Rate Selector -->
+<div class="flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Telemetry Broadcast Interval</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-bold" id="rate-badge">50 Hz • 20ms</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs p-1 bg-surface-container rounded-xl mt-1">
+<button class="freq-btn py-2 rounded-lg text-center font-label-md text-label-md font-semibold text-on-surface-variant transition-all hover:text-on-surface" data-freq="20" type="button">20 Hz</button>
+<button class="freq-btn py-2 rounded-lg text-center font-label-md text-label-md font-semibold bg-surface-container-lowest text-on-surface shadow-sm transition-all" data-freq="50" type="button">50 Hz [Default]</button>
+<button class="freq-btn py-2 rounded-lg text-center font-label-md text-label-md font-semibold text-on-surface-variant transition-all hover:text-on-surface" data-freq="100" type="button">100 Hz</button>
+</div>
+</div>
+<!-- Toggles Stack -->
+<div class="flex flex-col space-y-space-md pt-space-xs">
+<!-- Toggle 1: High Precision GPS -->
+<div class="flex items-center justify-between">
+<div class="flex items-start gap-space-sm max-w-[75%]">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface mt-0.5">
+<span class="material-symbols-outlined text-base">my_location</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-semibold leading-tight">High-Precision GPS Mode</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dual-frequency GNSS (L1+L5 carrier phase)</span>
+</div>
+</div>
+<button aria-checked="true" class="switch-toggle w-12 h-7 rounded-full bg-secondary p-0.5 transition-colors relative" role="switch" type="button">
+<div class="w-6 h-6 rounded-full bg-surface-container-lowest shadow-sm transform translate-x-5 transition-transform"></div>
+</button>
+</div>
+<div class="w-full h-px bg-surface-container"></div>
+<!-- Toggle 2: Raw IMU Logging -->
+<div class="flex items-center justify-between">
+<div class="flex items-start gap-space-sm max-w-[75%]">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface mt-0.5">
+<span class="material-symbols-outlined text-base">sd_card</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-semibold leading-tight">Raw IMU Logging</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Local CSV storage for Kalman filter offline training</span>
+</div>
+</div>
+<button aria-checked="true" class="switch-toggle w-12 h-7 rounded-full bg-secondary p-0.5 transition-colors relative" role="switch" type="button">
+<div class="w-6 h-6 rounded-full bg-surface-container-lowest shadow-sm transform translate-x-5 transition-transform"></div>
+</button>
+</div>
+<div class="w-full h-px bg-surface-container"></div>
+<!-- Toggle 3: Low-Latency Socket Keepalive -->
+<div class="flex items-center justify-between">
+<div class="flex items-start gap-space-sm max-w-[75%]">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface mt-0.5">
+<span class="material-symbols-outlined text-base">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-semibold leading-tight">Low-Latency Socket Keepalive</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Prevents radio dormancy on cellular C-V2V handoff</span>
+</div>
+</div>
+<button aria-checked="true" class="switch-toggle w-12 h-7 rounded-full bg-secondary p-0.5 transition-colors relative" role="switch" type="button">
+<div class="w-6 h-6 rounded-full bg-surface-container-lowest shadow-sm transform translate-x-5 transition-transform"></div>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Diagnostics & Live Connection Test -->
+<div class="w-full flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider font-bold">Diagnostics &amp; Verification</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">RTT &amp; JITTER</span>
+</div>
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">Connection Diagnostic</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ping mesh cluster, measure serialization lag &amp; NTP skew</p>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-lg">network_check</span>
+</div>
+</div>
+<!-- Real-Time Metrics Grid -->
+<div class="grid grid-cols-3 gap-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Broker Ping</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold my-1" id="metric-ping">12 ms</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Pass
+          </span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Packet Loss</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold my-1" id="metric-loss">0.0%</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Pass
+          </span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Time Sync (NTP)</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold my-1" id="metric-ntp">±1.4 ms</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Synced
+          </span>
+</div>
+</div>
+<!-- Live diagnostic action button -->
+<button class="w-full h-12 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 active:scale-[0.99] transition-transform shadow-sm" id="run-diagnostic-btn" type="button">
+<span class="material-symbols-outlined text-lg" id="diagnostic-spinner">play_arrow</span>
+<span id="diagnostic-btn-text">RUN CONNECTION TEST</span>
+</button>
+</div>
+</div>
+<!-- Section 4: Academic Project & Metadata -->
+<div class="w-full flex flex-col space-y-space-sm pt-space-xs">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider font-bold">About SmartV2V</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">CSE CAPSTONE</span>
+</div>
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Build Specifications</span>
+<span class="font-body-md text-body-md text-on-surface font-bold">v1.4.2-FinalYearRelease</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Build 2025.10 • Linux-Kernel RT Target</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">Production</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col space-y-1">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Underlying Framework</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+          Distributed Smartphone-to-Smartphone V2V Cooperative Awareness &amp; Decision Tree / LSTM Collision Estimator.
+        </p>
+<span class="font-body-sm text-body-sm text-on-surface-variant pt-1">
+          Department of Computer Science &amp; Engineering Final-Year Capstone
+        </span>
+</div>
+<!-- Action buttons -->
+<div class="flex flex-col space-y-space-xs pt-space-xs">
+<button class="w-full py-3 px-space-md rounded-xl bg-surface-container text-on-surface font-label-md text-label-md font-bold flex items-center justify-center gap-2 hover:bg-surface-container-high transition-colors" id="view-architecture-btn" type="button">
+<span class="material-symbols-outlined text-lg">schema</span>
+<span>View System Architecture Diagram</span>
+</button>
+<button class="w-full py-2.5 px-space-md rounded-xl text-error font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 hover:bg-error-container/20 transition-colors" id="reset-params-btn" type="button">
+<span class="material-symbols-outlined text-lg">restart_alt</span>
+<span>Reset to Default Parameters</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Inline Interactive Script -->
+<script>
+  (function initSmartV2VSettings() {
+    // 1. Frequency Segment Selection
+    const freqBtns = document.querySelectorAll('.freq-btn');
+    const rateBadge = document.getElementById('rate-badge');
+
+    freqBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        freqBtns.forEach(b => {
+          b.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+          b.classList.add('text-on-surface-variant');
+        });
+        btn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+        btn.classList.remove('text-on-surface-variant');
+
+        const freq = btn.getAttribute('data-freq');
+        if (freq === '20') {
+          rateBadge.textContent = '20 Hz • 50ms';
+        } else if (freq === '50') {
+          rateBadge.textContent = '50 Hz • 20ms';
+        } else if (freq === '100') {
+          rateBadge.textContent = '100 Hz • 10ms';
+        }
+      });
+    });
+
+    // 2. Custom Switches Toggle Behavior
+    const toggles = document.querySelectorAll('.switch-toggle');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const isChecked = toggle.getAttribute('aria-checked') === 'true';
+        const thumb = toggle.querySelector('div');
+
+        if (isChecked) {
+          toggle.setAttribute('aria-checked', 'false');
+          toggle.classList.remove('bg-secondary');
+          toggle.classList.add('bg-surface-container-high');
+          thumb.classList.remove('translate-x-5');
+          thumb.classList.add('translate-x-0');
+        } else {
+          toggle.setAttribute('aria-checked', 'true');
+          toggle.classList.remove('bg-surface-container-high');
+          toggle.classList.add('bg-secondary');
+          thumb.classList.remove('translate-x-0');
+          thumb.classList.add('translate-x-5');
+        }
+      });
+    });
+
+    // 3. Connection Diagnostics Simulation
+    const runBtn = document.getElementById('run-diagnostic-btn');
+    const spinnerIcon = document.getElementById('diagnostic-spinner');
+    const btnText = document.getElementById('diagnostic-btn-text');
+    const pingEl = document.getElementById('metric-ping');
+    const lossEl = document.getElementById('metric-loss');
+    const ntpEl = document.getElementById('metric-ntp');
+
+    if (runBtn) {
+      runBtn.addEventListener('click', () => {
+        spinnerIcon.textContent = 'sync';
+        spinnerIcon.classList.add('animate-spin');
+        btnText.textContent = 'TESTING MESH NODES...';
+        runBtn.disabled = true;
+
+        setTimeout(() => {
+          spinnerIcon.classList.remove('animate-spin');
+          spinnerIcon.textContent = 'check_circle';
+          btnText.textContent = 'TEST COMPLETE (OK)';
+          runBtn.disabled = false;
+
+          // Slightly randomize metrics to simulate live active DAQ
+          const pingVal = Math.floor(Math.random() * 4) + 9; // 9 - 13 ms
+          const ntpVal = (Math.random() * 0.8 + 0.9).toFixed(1); // 0.9 - 1.7 ms
+          
+          pingEl.textContent = pingVal + ' ms';
+          lossEl.textContent = '0.0%';
+          ntpEl.textContent = '±' + ntpVal + ' ms';
+
+          setTimeout(() => {
+            spinnerIcon.textContent = 'play_arrow';
+            btnText.textContent = 'RUN CONNECTION TEST';
+          }, 3500);
+        }, 1200);
+      });
+    }
+
+    // 4. Quick Edit Vehicle ID Interaction
+    const editBtn = document.getElementById('edit-id-btn');
+    const vehicleIdDisplay = document.getElementById('vehicle-id-display');
+    if (editBtn && vehicleIdDisplay) {
+      editBtn.addEventListener('click', () => {
+        const current = vehicleIdDisplay.textContent.trim();
+        const nextId = current === 'V001' ? 'V002' : 'V001';
+        vehicleIdDisplay.textContent = nextId;
+      });
+    }
+
+    // 5. Reset to default parameters simulation
+    const resetBtn = document.getElementById('reset-params-btn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        // Reset default segment
+        const defaultSegment = document.querySelector('[data-freq="50"]');
+        if (defaultSegment) defaultSegment.click();
+        
+        // Reset toggles to true
+        toggles.forEach(toggle => {
+          if (toggle.getAttribute('aria-checked') !== 'true') {
+            toggle.click();
+          }
+        });
+
+        // Trigger micro alert feedback
+        const origText = resetBtn.innerHTML;
+        resetBtn.innerHTML = '<span class="material-symbols-outlined text-lg">check</span><span>Default Parameters Restored</span>';
+        setTimeout(() => {
+          resetBtn.innerHTML = origText;
+        }, 2000);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_16px_rgba(0,0,0,0.05)]" data-active-classes="bg-primary text-on-primary font-bold"><div class="h-20 px-space-md flex items-center justify-around gap-space-xs"><a class="flex flex-col items-center justify-center min-w-[70px] h-12 rounded-xl text-on-surface-variant hover:text-on-surface transition-all duration-200" data-path="dashboard" href="#"><span class="material-symbols-outlined text-2xl">speed</span><span class="font-label-sm text-label-sm mt-0.5">Dashboard</span></a><a class="flex flex-col items-center justify-center min-w-[70px] h-12 rounded-xl text-on-surface-variant hover:text-on-surface transition-all duration-200" data-path="vehicles" href="#"><span class="material-symbols-outlined text-2xl">car_tag</span><span class="font-label-sm text-label-sm mt-0.5">Vehicles</span></a><a class="flex flex-col items-center justify-center min-w-[70px] h-12 rounded-xl text-on-surface-variant hover:text-on-surface transition-all duration-200" data-path="sensors" href="#"><span class="material-symbols-outlined text-2xl">sensors</span><span class="font-label-sm text-label-sm mt-0.5">Sensors</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[70px] h-12 rounded-xl transition-all duration-200 bg-primary text-on-primary font-bold" data-path="settings" href="#"><span class="material-symbols-outlined text-2xl">tune</span><span class="font-label-sm text-label-sm mt-0.5">Settings</span></a></div></nav></body></html>

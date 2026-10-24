@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: smartv2v-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: smartv2v_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  ml-service:
+    build:
+      context: ./ml
+      dockerfile: Dockerfile
+    container_name: smartv2v-ml
+    restart: always
+    environment:
+      - PORT=8000
+    ports:
+      - "8000:8000"
+
+  backend:
+    build:
+      context: ./backend/smartv2v-server
+      dockerfile: Dockerfile
+    container_name: smartv2v-backend
+    restart: always
+    depends_on:
+      - postgres
+      - ml-service
+    environment:
+      - PORT=8080
+      - DB_URL=jdbc:postgresql://postgres:5432/smartv2v_db
+      - DB_USER=postgres
+      - DB_PASSWORD=password
+      - ML_SERVICE_URL=http://ml-service:8000/predict
+    ports:
+      - "8080:8080"
+
+volumes:
+  postgres_data:
